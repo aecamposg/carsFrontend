@@ -1,0 +1,17 @@
+.car {
+    text-align: center;
+
+    .car-title {
+        font-size: large;
+        margin: 20px;
+        font-weight: 500;
+    }
+    .car-back {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+    }
+    .reset-btn {
+        background: rgba(0, 63, 180, 0.801);
+    }
+}

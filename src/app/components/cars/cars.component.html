@@ -1,0 +1,31 @@
+<div class="cars">
+    <div class="car-create">
+        <button mat-fab color="warn" title="Create new Car" (click)="onCreate()">
+            <mat-icon>add</mat-icon>
+        </button>
+    </div>
+    <div class="car-list">
+        <div class="car-card" *ngFor="let car of carList">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>{{ car.brand }}</mat-card-title>
+                    <mat-card-subtitle>{{ car.model }}</mat-card-subtitle>
+                </mat-card-header>
+                <img class="car-image" mat-card-image src="{{ car.image }}" title="{{ car.brand }} - {{ car.model }}">
+                <mat-card-content>
+                    <p><strong>created:</strong> {{ car.created | date: 'mediumDate' }}</p>
+                    <p><strong>maxKms:</strong> {{ car.maxKms }}</p>
+                    <p><strong>cv:</strong> {{ car.cv }}</p>
+                    <p><strong>minTime:</strong> {{ car.minTime }}</p>
+                    <p><strong>cc:</strong> {{ car.cc }}</p>
+                    <p><strong>cylinders:</strong> {{ car.cylinders }}</p>
+                    <p><strong>kg:</strong> {{ car.kg }}</p>
+                </mat-card-content>
+                <mat-card-actions class="car-btns">
+                    <button mat-raised-button (click)="onEdit(car)">Edit</button>
+                    <button mat-raised-button color="warn" (click)="onDelete(car)">Delete</button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,96 @@
+<div class="car">
+    <div class="container">
+        <div class="car-title">
+            {{ title }}
+        </div>
+        <div class="car-back">
+            <button mat-fab color="primary" title="Back" (click)="onBack()">
+                <mat-icon>arrow_back</mat-icon>
+            </button>
+        </div>
+        <form [formGroup]="newForm" (ngSubmit)="onSubmit()">
+            <div class="row">
+                <div class="col-sm-6 col-md-4">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Enter a Brand</mat-label>
+                        <input matInput placeholder="Brand" formControlName="brand" required>
+                        <mat-error *ngIf="f.brand.errors && f.brand.errors.required">Brand is required!</mat-error>
+                        <mat-error *ngIf="f.brand.errors && f.brand.errors.pattern">Just letters!</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Enter a Model</mat-label>
+                        <input matInput placeholder="Model" formControlName="model" required>
+                        <mat-error *ngIf="f.model.errors && f.model.errors.required">Model is required!</mat-error>
+                        <mat-error *ngIf="f.model.errors && f.model.errors.pattern">Just letters!</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Enter Max Kms</mat-label>
+                        <input matInput placeholder="Max Kms" formControlName="maxKms" required>
+                        <mat-error *ngIf="f.maxKms.errors && f.maxKms.errors.required">Max Kms is required!</mat-error>
+                        <mat-error *ngIf="f.maxKms.errors && f.maxKms.errors.pattern">Just numbers!</mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-md-4">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Enter a CV</mat-label>
+                        <input matInput placeholder="CV" formControlName="cv" required>
+                        <mat-error *ngIf="f.cv.errors && f.cv.errors.required">CV is required!</mat-error>
+                        <mat-error *ngIf="f.cv.errors && f.cv.errors.pattern">Just numbers!</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Enter a Min Time</mat-label>
+                        <input matInput placeholder="Min Time" formControlName="minTime" required>
+                        <mat-error *ngIf="f.minTime.errors && f.minTime.errors.required">Min Time is required!</mat-error>
+                        <mat-error *ngIf="f.minTime.errors && f.minTime.errors.pattern">Just numbers!</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Enter a CC</mat-label>
+                        <input matInput placeholder="CC" formControlName="cc" required>
+                        <mat-error *ngIf="f.cc.errors && f.cc.errors.required">CC is required!</mat-error>
+                        <mat-error *ngIf="f.cc.errors && f.cc.errors.pattern">Just numbers!</mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-md-4">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Enter a Cylinders</mat-label>
+                        <input matInput placeholder="Cylinders" formControlName="cylinders" required>
+                        <mat-error *ngIf="f.cylinders.errors && f.cylinders.errors.required">Cylinders is required!</mat-error>
+                        <mat-error *ngIf="f.cylinders.errors && f.cylinders.errors.pattern">Just numbers!</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Enter a Kgs</mat-label>
+                        <input matInput placeholder="Kgs" formControlName="kg" required>
+                        <mat-error *ngIf="f.kg.errors && f.kg.errors.required">Kgs is required!</mat-error>
+                        <mat-error *ngIf="f.kg.errors && f.kg.errors.pattern">Just numbers!</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Enter a image</mat-label>
+                        <input matInput placeholder="Image" formControlName="image" required>
+                        <mat-error *ngIf="f.image.errors && f.image.errors.required">Image is required!</mat-error>
+                        <mat-error *ngIf="f.image.errors && f.image.errors.pattern">Just letters without space!</mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row mx-auto justify-content-center align-items-center m-5">
+                <button mat-raised-button color="primary" style="margin-right: 10px;" [disabled]="!newForm.valid">{{ btnName }}</button>
+                <button mat-raised-button class="reset-btn" (click)="onReset()">Reset</button>
+            </div>
+        </form>
+    </div>
+</div>
